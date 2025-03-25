@@ -1,0 +1,1 @@
+Supporting data and R coding for manuscript titled "Use of creel data to understand factors influencing angler decisions to harvest fish" submitted for consideration of publication to Transactions of the American Fisheries Society.
