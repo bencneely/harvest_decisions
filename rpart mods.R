@@ -32,19 +32,6 @@ library(tidyverse)
 ## Set seed for reproducible results
 addTaskCallback(function(...) {set.seed(1114);TRUE})
 
-## Set ggplot themes
-transtheme=theme_classic()+
-  theme(panel.grid=element_blank(), 
-        panel.background=element_blank(),
-        plot.background=element_blank(),
-        panel.border=element_rect(color="white",fill="transparent"),
-        axis.title=element_text(size=22,color="white",face="bold"),
-        axis.text=element_text(size=18,color="white"),
-        axis.line=element_line(color="white"),
-        axis.ticks=element_line(color="white"),
-        legend.position="none")
-options(scipen=999)
-
 pubtheme=theme_classic()+
   theme(panel.grid=element_blank(), 
         panel.background=element_blank(),
