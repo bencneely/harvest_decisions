@@ -1,6 +1,6 @@
 #--------------------------------------------------------------
 #Ben Neely
-#04/25/2025
+#07/21/2025
 #Investigate what drives angler decision to harvest legal and illegal fish from creel data
 #This incorporates creel data from 1997-2024 in Kansas waters
 #--------------------------------------------------------------
@@ -46,10 +46,10 @@ pubtheme=theme_classic()+
 options(scipen=999)
 
 ## Set working directory
-setwd("C:/Users/Ben.Neely/OneDrive - State of Kansas, OITS/Desktop/Harvest patterns/")
+setwd("C:/Users/Ben.Neely/OneDrive - State of Kansas, OITS/Documents/Active manuscripts/Harvest patterns/github")
 
 ## Read in data with import
-dat=import("harvest factors/moddat_clean.csv")
+dat=import("moddat_clean.csv")
 
 ## Manipulate variables to make analyses easier
 dat1=dat%>%
@@ -587,6 +587,14 @@ imp_whb=tibble(var=names(whbtree$variable.importance),vi=whbtree$variable.import
          rel_prop_vi=vi/max(vi))%>%
   select(spp,var,vi,prop_vi,rel_prop_vi)
 
+###############################################################
+###############################################################
+## Combine all models into an .RData file for further outside processing
+mods=list(global=mod,bcf=bcftree,ccf=ccftree,ccarp=ccarptree,crappie=crappietree,
+          fhc=fhctree,fwd=fwdtree,lmb=lmbtree,wiper=wipertree,percid=percidtree,
+          smb=smbtree,sunfish=sunfishtree,whb=whbtree)
+
+save(mods,file="mods.RData")
 ###############################################################
 ###############################################################
 ###############################################################
